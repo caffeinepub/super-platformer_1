@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+    --background: 1 0 0;
+    --foreground: 0.16 0.02 247;
+    --card: 0.98 0.005 240;
+    --card-foreground: 0.16 0.02 247;
+    --popover: 1 0 0;
+    --popover-foreground: 0.16 0.02 247;
+    --primary: 0.67 0.17 46;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.82 0.15 85;
+    --secondary-foreground: 0.16 0.02 247;
+    --muted: 0.95 0.01 240;
+    --muted-foreground: 0.5 0.03 240;
+    --accent: 0.27 0.05 243;
+    --accent-foreground: 0.95 0.01 240;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.9 0.01 240;
+    --input: 0.9 0.01 240;
+    --ring: 0.67 0.17 46;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+    /* Game custom tokens */
+    --navy: #1f2b3a;
+    --sky-blue: #3ea7e8;
+    --grass-green: #4aae4f;
+    --dirt-brown: #b86a2b;
+    --game-orange: #f57c2a;
+    --game-yellow: #f6c64a;
+    --dark-border: #2b1a10;
+  }
+
+  * {
+    @apply border-border;
+    image-rendering: pixelated;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .pixel-btn-orange {
+    background: var(--game-orange);
+    border: 3px solid var(--dark-border);
+    box-shadow: 4px 4px 0px var(--dark-border);
+    font-family: "Press Start 2P", monospace;
+    color: white;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+  .pixel-btn-orange:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--dark-border);
+  }
+  .pixel-btn-orange:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--dark-border);
+  }
+
+  .pixel-btn-yellow {
+    background: var(--game-yellow);
+    border: 4px solid var(--dark-border);
+    box-shadow: 5px 5px 0px var(--dark-border);
+    font-family: "Press Start 2P", monospace;
+    color: var(--dark-border);
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+  .pixel-btn-yellow:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0px var(--dark-border);
+  }
+  .pixel-btn-yellow:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0px var(--dark-border);
+  }
+
+  .pixel-heading {
+    font-family: "Press Start 2P", monospace;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0
+      #000;
+  }
+
+  .pixel-subheading {
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.75rem;
+  }
+
+  .nav-link {
+    color: #eaf0f8;
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .nav-link:hover {
+    color: var(--game-yellow);
+  }
+
+  .platform-card {
+    border: 3px solid var(--dark-border);
+    box-shadow: 5px 5px 0px var(--dark-border);
+    background: white;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .platform-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px var(--dark-border);
+  }
+}
